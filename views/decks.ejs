@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Your Decks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h2>Here is a list of your current decks:,</h2>
+ 
+  <ul>
+    <% for(let i=0; i<deck.length; i++) {%>
+
+      <li><a href="/decks/<%= deck[i]._id %>">
+          <%= deck[i]._id %>
+        </a></li>
+
+      <% } %>
+
+  </ul>
+
+  <form action="/decks/createDeck/" method="POST">
+    <button type="submit">Create New Deck</button>
+  </form>
+  <!-- <form action="/decks/openDeck/<%= deck %>?" method="POST">
+      <button type="submit">Open</button>
+      </form> -->
+
+  <a href="/">
+    <h2>Return to main menu</h2>
+  </a>
+</body>
+
+</html>

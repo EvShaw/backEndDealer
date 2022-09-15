@@ -1,2 +1,26 @@
-<h2>Cards Here</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Decks</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
 
+    
+    <h1>Welcome, there are currently <%= deck.length %> Decks</h1>
+
+
+    <h2>This api is currently using a database that you will need to configure.</h2>
+    <ul>
+        <li>in your env folder, set your DB_STRING = mongo.connection.string</li>
+    </ul>
+
+    <h2>To see a list of your decks, click <a href="/decks">here</a> or add /decks to your endpoint</h2>	
+
+  </body>
+
+</html>
