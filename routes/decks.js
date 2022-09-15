@@ -5,10 +5,10 @@ const decksController = require('../controllers/decks')
 //Deck Routes:
 
 router.get('/', decksController.getDecks)
-
 router.get('/:id', decksController.selectDeck)
 
 router.post('/createDeck', decksController.createDeck) 
+router.post('/openDeck/:id', decksController.openDeck) 
 
 router.delete('/deleteDeck/:id', decksController.deleteDeck);
 
