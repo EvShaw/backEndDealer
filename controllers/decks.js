@@ -34,19 +34,35 @@ module.exports = {
         res.render('individualDeck.ejs', { deck: deckID })
     },
     openDeck: async (req, res) => {
-        console.log("Opened Deck")
+
+        const suits = ['H', 'C', 'D', 'S']
+        const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
+        const deck = []
+        let cardCount = 0
+        for (let suitCount = 0; suitCount < suits.length; suitCount++) {
+            for (let rankCount = 0; rankCount < ranks.length; rankCount++) {
+                cardCount++
+                deck.push(ranks[rankCount] + suits[suitCount])
+            }
+        }
+
+        console.log(deck)
+        const deckID = req.params.id
+        console.log(`Opened Deck: ${deckID}`)
 
         try {
-            let deck = await Deck.findById({ _id: req.params.id });
 
+            //get deck of cards amd display in order a->k-q-> etc. 
+            //including suits
+            //have ability to shuffle, draw, create short deck. 
 
         } catch (err) {
             console.error(err)
         }
     },
-    drawCard: async () => {
+    // drawCard: async () => {
 
-    },
+    // },
     deleteDeck: async (req, res) => {
         try {
             let deck = await Deck.findById({ _id: req.params.id });
