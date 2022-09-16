@@ -12,6 +12,7 @@ router.post('/createShortDeck', decksController.createShortDeck)
 router.post('/openDeck/:id', decksController.openDeck) 
 
 router.put('/shuffleDeck/:id', decksController.shuffleDeck)
+router.put('/drawCard/:id', decksController.drawCard)
 
 router.delete('/deleteDeck/:id', decksController.deleteDeck);
 

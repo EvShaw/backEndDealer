@@ -18,16 +18,10 @@
     </ul>
 
     <h2>Card list: in Order</h2>
-    <!-- <ul>
-      <% for(let i=0; i<deck.length; i++) {%>
-  
-        <li><a href="/decks/<%= deck[i]._id %>">
-            <%= deck[i]._id %>
-          </a></li>
-  
-        <% } %>
-  
-    </ul> -->
+
+
+   
+
 
     <form action="/decks/openDeck/<%= deck %>?" method="POST">
     <button type="submit">Open</button>
@@ -35,6 +29,10 @@
 
     <form action="/decks/shuffleDeck/<%= deck %>?_method=PUT" method="POST">
     <button type="submit">Shuffle Deck</button>
+    </form>
+
+    <form action="/decks/drawCard/<%= deck %>?_method=PUT" method="POST">
+    <button type="submit">Draw a Card</button>
     </form>
 
     <form action="/decks/deleteDeck/<%= deck %>?_method=DELETE" method="POST">

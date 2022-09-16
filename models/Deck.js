@@ -10,6 +10,7 @@ const DeckSchema = new mongoose.Schema({
    shuffled: Boolean, // true = shuffled / false = in order
    openDeck: Boolean,
    deckOfCards: Array,
+   hand: Array,
    createdAt: {
       type: Date,
       default: Date.now,
