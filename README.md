@@ -195,9 +195,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Evan Shaw - [https://twitter.com/Evan_ShawAZ] - evanshaw.az@gmail.com
+Evan Shaw - https://twitter.com/Evan_ShawAZ - evanshaw.az@gmail.com
 
-Project Link: [https://github.com/EvShaw/katanaAssessment]
+Project Link: https://github.com/EvShaw/katanaAssessment
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
