@@ -81,12 +81,12 @@
 
 This project was a timed test that took 5 hours to complete. With more time, the following changes would be added: 
 
-* Update Shuffle and draw methods in controller. 
+* Update shuffleDeck and drawCard methods inside the deck.js controller. 
 
 If refactored, the following changes would be made: 
 
-* Break Schema down, creating a hand schema to hold cards. 
-* Rebuilt card generator to include values to each card so that they would have a functional purpose in a game, 
+* Break schema down, creating a hand schema to hold cards along with the deck schema. 
+* Rebuild card generator to also include values. Assigning a value to each card they would turn this application into a fully functional game. 
 
 Presentation Changes: 
 
@@ -115,7 +115,7 @@ Presentation Changes:
 This backend project uses the following modules: 
 
 * npm install:
-* ``` nconnect-mongo dotenv ejs express method-override mongoose morgan nodemon 
+* connect-mongo dotenv ejs express method-override mongoose morgan nodemon 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
