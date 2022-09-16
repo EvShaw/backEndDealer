@@ -23,9 +23,17 @@
 
   </ul>
 
-  <form action="/decks/createDeck/" method="POST">
-    <button type="submit">Create New Deck</button>
+  
+  <form action="/decks/createFullDeck" method="POST">
+    <button type="submit">Create New Full Deck</button>
   </form>
+
+  <form action="/decks/createShortDeck/" method="POST">
+    <button type="submit">Create New Short Deck</button>
+  </form>
+
+  <h2>To create a new deck, click the button above</h2>
+  <h2>To Open, shuffle, or delete a deck, click on the deck of choice or add the deck id to your endpoint: /decks/deckIDHere</h2>
   <!-- <form action="/decks/openDeck/<%= deck %>?" method="POST">
       <button type="submit">Open</button>
       </form> -->

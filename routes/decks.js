@@ -7,11 +7,12 @@ const decksController = require('../controllers/decks')
 router.get('/', decksController.getDecks)
 router.get('/:id', decksController.selectDeck)
 
-router.post('/createDeck', decksController.createDeck) 
+router.post('/createFullDeck', decksController.createFullDeck) 
+router.post('/createShortDeck', decksController.createShortDeck) 
 router.post('/openDeck/:id', decksController.openDeck) 
 
-router.delete('/deleteDeck/:id', decksController.deleteDeck);
+router.put('/shuffleDeck/:id', decksController.shuffleDeck)
 
-// router.post('/openDeck/:id', decksController.openDeck)
+router.delete('/deleteDeck/:id', decksController.deleteDeck);
 
 module.exports = router

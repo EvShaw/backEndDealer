@@ -11,7 +11,34 @@ module.exports = {
             console.error(err)
         }
     },
-    createDeck: async (req, res) => {
+    createShortDeck: async (req, res) => {
+        const suits = ['H', 'C', 'D', 'S']
+        const ranks = ['7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
+        const cardDeck = []
+
+        for (let suitCount = 0; suitCount < suits.length; suitCount++) {
+            for (let rankCount = 0; rankCount < ranks.length; rankCount++) {
+                cardDeck.push(ranks[rankCount] + suits[suitCount])
+            }
+        }
+
+        try {
+            await Deck.create({
+                Type: 'short',
+                cardCount: cardDeck.length,
+                shuffled: false,
+                openDeck: false,
+                deckOfCards: cardDeck
+            });
+            console.log("deck has been added!");
+
+        } catch (err) {
+            console.error(err)
+        }
+
+        res.redirect('/decks')
+    },
+    createFullDeck: async (req, res) => {
         const suits = ['H', 'C', 'D', 'S']
         const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
         const cardDeck = []
@@ -25,7 +52,7 @@ module.exports = {
         try {
             await Deck.create({
                 Type: 'full',
-                cardCount: 52,
+                cardCount: cardDeck.length,
                 shuffled: false,
                 openDeck: false,
                 deckOfCards: cardDeck
@@ -40,24 +67,32 @@ module.exports = {
     },
     selectDeck: async (req, res) => {
         const deckID = req.params.id
-        console.log(`Selected Deck: ${deckID}`)
+        console.log(deckID)
 
-        res.render('individualDeck.ejs', { deck: deckID })
+
+        try {
+            const getDecks = await Deck.find()
+            console.log(getDecks)
+
+            console.log(getDecks.includes(deckID))
+
+            res.render('individualDeck.ejs', {
+                deck: deckID
+            })
+        } catch (err) {
+            console.error(err)
+        }
     },
     openDeck: async (req, res) => {
         const deckID = req.params.id
         console.log(`Opened Deck: ${deckID}`)
-
+        // deckOfCards: Array.sort(() => (Math.random() > .5) ? 1 : -1)
         try {
             await Deck.findOneAndUpdate({ _id: req.params.id },
                 {
                     openDeck: true,
                 })
-            // await Deck.find({ openDeck: true })
-
-
-            // res.redirect(`/decks/${deckID}`)
-            res.render('individualDeck.ejs', {})
+            res.redirect(`/decks/${deckID}`)
         } catch (err) {
             console.error(err)
         }
@@ -65,8 +100,20 @@ module.exports = {
     drawCard: async () => {
 
     },
-    shuffleDeck: async () => {
-        //deck.sort(() => (Math.random() > .5) ? 1 : -1);
+    shuffleDeck: async (req, res) => {
+        try {
+            const deck = await Deck.findById(req.params.id);
+            console.log(`here ${deck.deckOfCards.sort(() => (Math.random() > .5) ? 1 : -1)}`)
+
+            await Deck.findOneAndUpdate({ _id: req.params.id }, 
+                {
+                    deckOfCards: Array.sort(() => (Math.random() > .5) ? 1 : -1)
+                })
+           
+
+        } catch(err) {
+            console.error(err)
+        }
     },
     deleteDeck: async (req, res) => {
         try {
