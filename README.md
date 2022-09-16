@@ -37,13 +37,13 @@
 <h3 align="center">Backend Dealer</h3>
 
   <p align="center">
-    Generate full or short decks that come sealed and in order. Draw cards into your hand, shuffle your deck, and manage your deck list. Built on Node.js while utilizing MongoDB.  
+    Generate full or short decks that come sealed and in order. Draw cards into your hand, shuffle your deck, and manage your deck list. Built on Node.js while utilizing MongoDB to store deck list, deck order, and hands (based on each deck).  
     <br />
     <a href="https://github.com/EvShaw/katanaAssessment"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/EvShaw/katanaAssessment/repo_name">View Demo</a>
-    ·
+    <!-- <a href="https://github.com/EvShaw/katanaAssessment/repo_name">View Demo</a> -->
+    <!-- · -->
     <a href="https://github.com/EvShaw/katanaAssessment/issues">Report Bug</a>
     ·
     <a href="https://github.com/EvShaw/katanaAssessment/issues">Request Feature</a>
