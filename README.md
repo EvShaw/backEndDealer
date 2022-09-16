@@ -83,7 +83,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
@@ -93,32 +93,41 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* Node.js
+* Express
+* MongoDB
+* Mongoose
+* EJS
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+You will need a mongoDB account to use this project. (<a href="https://account.mongodb.com/account/login?nds=true&_ga=2.14377279.984938166.1654019526-1287789353.1654019526&_gac=1.116379764.1654114075.Cj0KCQjwnNyUBhCZARIsAI9AYlEf4wYBp96xsJtENsKxlsfJSaJuzSImju8ztbWwZjbXblicq7oG39waAn-2EALw_wcB">Create MongoDB Atlas account</a>)
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+This backend project uses the following modules: 
+
+* npm install:
+* ```sh 
+npm i connect-mongo dotenv ejs express method-override mongoose morgan nodemon 
+```
 * npm
   ```sh
   npm install npm@latest -g
   ```
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "mongodb": "^4.9.1",
+    "mongoose": "^6.6.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.19"
 
 ### Installation
 
