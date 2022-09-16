@@ -49,8 +49,15 @@ module.exports = {
         console.log(`Opened Deck: ${deckID}`)
 
         try {
-            await Deck.findOneAndUpdate({ openDeck: true})
-           
+            await Deck.findOneAndUpdate({ _id: req.params.id },
+                {
+                    openDeck: true,
+                })
+            // await Deck.find({ openDeck: true })
+
+
+            // res.redirect(`/decks/${deckID}`)
+            res.render('individualDeck.ejs', {})
         } catch (err) {
             console.error(err)
         }
@@ -59,11 +66,11 @@ module.exports = {
 
     },
     shuffleDeck: async () => {
-      //create array based on deck length. re map with random number generator?
+        //deck.sort(() => (Math.random() > .5) ? 1 : -1);
     },
     deleteDeck: async (req, res) => {
         try {
-            let deck = await Deck.findById({ _id: req.params.id });
+            // let deck = await Deck.findById({ _id: req.params.id });
             await Deck.remove({ _id: req.params.id });
 
             console.log("Deleted Deck")
