@@ -12,12 +12,23 @@ module.exports = {
         }
     },
     createDeck: async (req, res) => {
+        const suits = ['H', 'C', 'D', 'S']
+        const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
+        const cardDeck = []
+
+        for (let suitCount = 0; suitCount < suits.length; suitCount++) {
+            for (let rankCount = 0; rankCount < ranks.length; rankCount++) {
+                cardDeck.push(ranks[rankCount] + suits[suitCount])
+            }
+        }
+
         try {
             await Deck.create({
                 Type: 'full',
                 cardCount: 52,
                 shuffled: false,
-
+                openDeck: false,
+                deckOfCards: cardDeck
             });
             console.log("deck has been added!");
 
@@ -34,35 +45,22 @@ module.exports = {
         res.render('individualDeck.ejs', { deck: deckID })
     },
     openDeck: async (req, res) => {
-
-        const suits = ['H', 'C', 'D', 'S']
-        const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
-        const deck = []
-        let cardCount = 0
-        for (let suitCount = 0; suitCount < suits.length; suitCount++) {
-            for (let rankCount = 0; rankCount < ranks.length; rankCount++) {
-                cardCount++
-                deck.push(ranks[rankCount] + suits[suitCount])
-            }
-        }
-
-        console.log(deck)
         const deckID = req.params.id
         console.log(`Opened Deck: ${deckID}`)
 
         try {
-
-            //get deck of cards amd display in order a->k-q-> etc. 
-            //including suits
-            //have ability to shuffle, draw, create short deck. 
-
+            await Deck.findOneAndUpdate({ openDeck: true})
+           
         } catch (err) {
             console.error(err)
         }
     },
-    // drawCard: async () => {
+    drawCard: async () => {
 
-    // },
+    },
+    shuffleDeck: async () => {
+      //create array based on deck length. re map with random number generator?
+    },
     deleteDeck: async (req, res) => {
         try {
             let deck = await Deck.findById({ _id: req.params.id });
