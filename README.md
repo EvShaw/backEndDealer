@@ -86,7 +86,7 @@ This project was a timed test that took 5 hours to complete. With more time, the
 If refactored, the following changes would be made: 
 
 * Break schema down, creating a hand schema to hold cards along with the deck schema. 
-* Rebuild card generator to also include values. Assigning a value to each card they would turn this application into a fully functional game. 
+* Rebuild card generator to also include values. Assigning a value to each card would give this application functional purpose and the ability to be used as so in a number of games. 
 
 Presentation Changes: 
 
