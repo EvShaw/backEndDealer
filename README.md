@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://img.icons8.com/quill/344/experimental-cards-quill.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Backend Dealer</h3>
