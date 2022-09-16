@@ -2,16 +2,10 @@ const mongoose = require('mongoose')
 
 // console.log(deck)
 
-const deckOfCardsSchema = new mongoose.Schema({
-   
-   type: String, //full or short
-   totalCards: Number, //62 for full, 32 for short
-   shuffled: String, //shuffled - yes - mixed order, 
-   // cards:
-})
+
 
 const DeckSchema = new mongoose.Schema({
-   Type: String, //full or short
+   type: String, //full or short
    cardCount: Number, //52 cards if full deck
    shuffled: Boolean, // true = shuffled / false = in order
    openDeck: Boolean,
@@ -20,7 +14,6 @@ const DeckSchema = new mongoose.Schema({
       type: Date,
       default: Date.now,
    },
-   deckCards: deckOfCardsSchema,
 })
 
 
