@@ -37,7 +37,7 @@
 <h3 align="center">Backend Dealer</h3>
 
   <p align="center">
-    project_description
+    Generate full or short decks that come sealed and in order. Draw cards into your hand, shuffle your deck, and manage your deck list. Built on Node.js while utilizing MongoDB.  
     <br />
     <a href="https://github.com/EvShaw/katanaAssessment"><strong>Explore the docs »</strong></a>
     <br />
