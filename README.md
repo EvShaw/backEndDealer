@@ -37,7 +37,7 @@
 <h3 align="center">Backend Dealer</h3>
 
   <p align="center">
-    Generate full or short decks that come sealed and in order. Draw cards into your hand, shuffle your deck, and manage your deck list. Built on Node.js while utilizing MongoDB to store deck list, deck order, and hands (based on each deck).  
+    Generate full and short decks that come sealed and in order. Draw cards into your hand, shuffle your deck, and manage your deck list. Built on Node.js while utilizing MongoDB to store deck list, deck order, and hands (based on each deck).  
     <br />
     <a href="https://github.com/EvShaw/katanaAssessment"><strong>Explore the docs »</strong></a>
     <br />
@@ -92,9 +92,9 @@ If refactored, the following changes would be made:
 * Break Schema down, creating a hand schema to hold cards. 
 * Rebuilt card generator to include values to each card so that they would have a functional purpose in a game, 
 
-Additional Changes for quality and presentation: 
+Presentation Changes: 
 
-* Add styling
+* Add (any) styling
 * Exchange EJS templating with React. 
 
 ### Built With
@@ -111,46 +111,19 @@ Additional Changes for quality and presentation:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-You will need a mongoDB account to use this project. (<a href="https://account.mongodb.com/account/login?nds=true&_ga=2.14377279.984938166.1654019526-1287789353.1654019526&_gac=1.116379764.1654114075.Cj0KCQjwnNyUBhCZARIsAI9AYlEf4wYBp96xsJtENsKxlsfJSaJuzSImju8ztbWwZjbXblicq7oG39waAn-2EALw_wcB">Create MongoDB Atlas account</a>)
+* You will need a mongoDB account to use this project. (<a href="https://account.mongodb.com/account/login?nds=true&_ga=2.14377279.984938166.1654019526-1287789353.1654019526&_gac=1.116379764.1654114075.Cj0KCQjwnNyUBhCZARIsAI9AYlEf4wYBp96xsJtENsKxlsfJSaJuzSImju8ztbWwZjbXblicq7oG39waAn-2EALw_wcB">Create MongoDB Atlas account</a>)
+* You will also need to set you PORT number in the env file. 
 
 ### Prerequisites
 
 This backend project uses the following modules: 
 
 * npm install:
-* ```sh 
-npm i connect-mongo dotenv ejs express method-override mongoose morgan nodemon 
-```
-
-
-   ```
+* ```sh npm i connect-mongo dotenv ejs express method-override mongoose morgan nodemon 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
