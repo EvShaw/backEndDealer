@@ -1,10 +1,10 @@
 const Deck = require('../models/Deck')
 
-
 module.exports = {
     getDecks: async (req, res) => {
         try {
             const deck = await Deck.find()
+            
             res.render('decks.ejs', { deck: deck })
 
         } catch (err) {
@@ -21,7 +21,6 @@ module.exports = {
                 cardDeck.push(ranks[rankCount] + suits[suitCount])
             }
         }
-
         try {
             await Deck.create({
                 Type: 'short',
@@ -31,11 +30,9 @@ module.exports = {
                 deckOfCards: cardDeck
             });
             console.log("deck has been added!");
-
         } catch (err) {
             console.error(err)
         }
-
         res.redirect('/decks')
     },
     createFullDeck: async (req, res) => {
@@ -48,7 +45,6 @@ module.exports = {
                 cardDeck.push(ranks[rankCount] + suits[suitCount])
             }
         }
-
         try {
             await Deck.create({
                 Type: 'full',
@@ -58,18 +54,14 @@ module.exports = {
                 deckOfCards: cardDeck
             });
             console.log("deck has been added!");
-
         } catch (err) {
             console.error(err)
         }
-
         res.redirect('/decks')
     },
     selectDeck: async (req, res) => {
         const deckID = req.params.id
         console.log(deckID)
-
-
         try {
             const getDecks = await Deck.find()
             console.log(getDecks)
@@ -77,7 +69,7 @@ module.exports = {
             console.log(getDecks.includes(deckID))
 
             res.render('individualDeck.ejs', {
-                deck: deckID
+                deck: deckID,
             })
         } catch (err) {
             console.error(err)
@@ -86,7 +78,7 @@ module.exports = {
     openDeck: async (req, res) => {
         const deckID = req.params.id
         console.log(`Opened Deck: ${deckID}`)
-        // deckOfCards: Array.sort(() => (Math.random() > .5) ? 1 : -1)
+
         try {
             await Deck.findOneAndUpdate({ _id: req.params.id },
                 {
@@ -97,21 +89,29 @@ module.exports = {
             console.error(err)
         }
     },
-    drawCard: async () => {
-
+    drawCard: async (req, res) => {
+        console.log('card draw')
+     
+        try {
+            const deck = await Deck.findById(req.params.id);
+            console.log(deck.hand.push(deck.deckOfCards.shift()))
+            // await deck.findOneAndUpdate({
+            //    //extract card from top of deck.
+            // })
+        } catch(err) {
+            console.error(err)
+        }
     },
     shuffleDeck: async (req, res) => {
         try {
             const deck = await Deck.findById(req.params.id);
             console.log(`here ${deck.deckOfCards.sort(() => (Math.random() > .5) ? 1 : -1)}`)
 
-            await Deck.findOneAndUpdate({ _id: req.params.id }, 
+            await Deck.findOneAndUpdate({ _id: req.params.id },
                 {
-                    deckOfCards: Array.sort(() => (Math.random() > .5) ? 1 : -1)
+                    deckOfCards: Array.sort(() => (Math.random() > .5) ? 1 : -1).save()
                 })
-           
-
-        } catch(err) {
+        } catch (err) {
             console.error(err)
         }
     },
@@ -119,7 +119,6 @@ module.exports = {
         try {
             // let deck = await Deck.findById({ _id: req.params.id });
             await Deck.remove({ _id: req.params.id });
-
             console.log("Deleted Deck")
             res.redirect("/decks")
         } catch (err) {
